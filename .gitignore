@@ -1,0 +1,7 @@
+# Build do maven
+target/
+
+# Arquivos do Eclipse
+.classpath
+.project
+.settings/

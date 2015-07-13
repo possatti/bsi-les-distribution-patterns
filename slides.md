@@ -61,7 +61,7 @@ Provê objetos de maior granulação no lugar de objetos com menor granulação,
 
 ======================================
 
-## Exemplo de Facade:
+## Exemplo de Remote Facade:
 
 ======================================
 
@@ -184,3 +184,84 @@ dis tributed systems." <!-- .element: class="fragment" data-fragment-index="1" -
  - Sempre que for necessário transferir múltiplos dados entre processos em uma única chamada.
  - Você pode usar uma representação textual do DTO, para não ter de criar a classe. Mas isso acopla muito as coisas a representação textual.
  - Outro uso comum, é quando você quer usar um DTO como fonte de dados para vários componentes em diferentes camadas.
+
+=======================================
+
+## Exemplo de DTO:
+
+=======================================
+
+### Comprador
+
+```
+public class Comprador {
+
+	private String nome;
+	private Integer idade;
+	//...
+}
+```
+
+=======================================
+
+### Produto
+
+```
+public class Produto {
+	private String nome;
+	private String descricao;
+	//...
+}
+```
+
+=======================================
+
+### Endereco
+
+```
+public class Endereco {
+	private String cep;
+	private String pais;
+	private String estado;
+	private String cidade;
+	private String rua;
+	private Integer numero;
+	//...
+}
+```
+
+=======================================
+
+### Pedido
+
+```
+public class Pedido {
+	Comprador comprador;
+	Map<Produto, Integer> itens;
+	Endereco destino;
+	//...
+}
+```
+
+=======================================
+
+### PedidoDTO
+
+```
+public class PedidoDTO {
+	private String nomeComprador;
+	private Integer idadeComprador;
+	private Map<String, Integer> itensDaCompra;
+	private String destinoCep;
+	private String destinoPais;
+	private String destinoEstado;
+	private String destinoCidade;
+	private String destinoRua;
+	private Integer destinoNumero;
+	//...
+}
+```
+
+=======================================
+
+# Obrigado! :)

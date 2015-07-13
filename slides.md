@@ -58,6 +58,67 @@ Provê objetos de maior granulação no lugar de objetos com menor granulação,
  - Quando tudo ocorrer em um único processo.
  - O cliente pode não querer o modelo inteiro, mas apenas uma porção menor dele. Nestes casos usamos o Data Transfer Object (DTO).
 
+
+======================================
+
+## Exemplo de Facade:
+
+======================================
+
+### Classe de endereço anêmica
+
+```
+public class Endereco {
+	private String cep;
+	private String pais;
+	private String estado;
+	private String cidade;
+	private String rua;
+	private Integer numero;
+	// ... gets e sets.
+}
+```
+
+======================================
+
+### Enviar dados de endereço
+
+```
+public class EnderecoFacade {
+	//...
+	public void setEndereco(String cep, String pais, String estado, String cidade, String rua, Integer numero) {
+		enderecoAtual.setCep(cep);
+		enderecoAtual.setPais(pais);
+		enderecoAtual.setEstado(estado);
+		enderecoAtual.setCidade(cidade);
+		enderecoAtual.setRua(rua);
+		enderecoAtual.setNumero(numero);
+	}
+	//...
+}
+```
+
+======================================
+
+### Obter dados de endereço
+
+```
+public class EnderecoFacade {
+	//...
+	public Map<String, String> getDadosEndereco() {
+		HashMap<String, String> dados = new HashMap<String, String>();
+		dados.put("cep", enderecoAtual.getCep());
+		dados.put("pais", enderecoAtual.getPais());
+		dados.put("estado", enderecoAtual.getEstado());
+		dados.put("cidade", enderecoAtual.getCidade());
+		dados.put("rua", enderecoAtual.getRua());
+		dados.put("numero", enderecoAtual.getNumero().toString());
+		return dados;
+	}
+	//...
+}
+```
+
 ======================================
 
 # 2. Data Transfer Object (DTO)

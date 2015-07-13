@@ -56,8 +56,6 @@ Provê objetos de maior granulação no lugar de objetos com menor granulação,
 ### Quando não usá-lo?
 
  - Quando tudo ocorrer em um único processo.
- - O cliente pode não querer o modelo inteiro, mas apenas uma porção menor dele. Nestes casos usamos o Data Transfer Object (DTO).
-
 
 ======================================
 

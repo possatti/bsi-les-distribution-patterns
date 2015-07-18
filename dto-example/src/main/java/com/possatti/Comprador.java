@@ -23,4 +23,9 @@ public class Comprador {
 		this.idade = idade;
 	}
 
+	@Override
+	public String toString() {
+		return "Comprador [nome=" + nome + ", idade=" + idade + "]";
+	}
+
 }

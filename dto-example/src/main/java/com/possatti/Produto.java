@@ -2,7 +2,10 @@ package com.possatti;
 
 public class Produto {
 	private String nome;
-	private String descricao;
+
+	public Produto(String nome) {
+		this.nome = nome;
+	}
 
 	public String getNome() {
 		return nome;
@@ -10,10 +13,10 @@ public class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getDescricao() {
-		return descricao;
+
+	@Override
+	public String toString() {
+		return "Produto [nome=" + nome + "]";
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+
 }

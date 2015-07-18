@@ -9,6 +9,17 @@ public class Endereco {
 	private String rua;
 	private Integer numero;
 
+	public Endereco(String cep, String pais, String estado, String cidade,
+			String rua, Integer numero) {
+		super();
+		this.cep = cep;
+		this.pais = pais;
+		this.estado = estado;
+		this.cidade = cidade;
+		this.rua = rua;
+		this.numero = numero;
+	}
+
 	public String getCep() {
 		return cep;
 	}
@@ -45,4 +56,12 @@ public class Endereco {
 	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
+
+	@Override
+	public String toString() {
+		return "Endereco [cep=" + cep + ", pais=" + pais + ", estado=" + estado
+				+ ", cidade=" + cidade + ", rua=" + rua + ", numero=" + numero
+				+ "]";
+	}
+
 }
